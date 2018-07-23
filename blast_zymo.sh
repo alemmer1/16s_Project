@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Tried a few different versions of this, couldn't find a format that had a parseable output
-# that still contained the species name 
+# This throws one warning per sequence in query because one of the output format flags isn't supported.
+# Is not an issue for the output or analysis later, but will fix at some point.
 
-blastn -query 170718_16s_zymoStandards_2000reads.fa -out ouput_zymo2000.blastn.txt -db 16SMicrobial -outfmt 7 -max_target_seqs 2
+blastn -query 170718_16s_zymoStandards_2000reads.fa -out check.blastn.txt -db 16SMicrobial -outfmt '7 qseqid sseqid evalue bitscore sgi sacc sscinames scomnames stitle' -max_target_seqs 1
