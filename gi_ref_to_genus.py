@@ -20,6 +20,8 @@ def createDict(input_db):
 				value = value[4].strip()
 				value = value.split()
 				value = value[0]
+				if value[0] == "[":
+					value = value[1:-1]
 				if key not in accnum_with_species:
 					accnum_with_species[key] = value
 	return accnum_with_species

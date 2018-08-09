@@ -19,7 +19,10 @@ def createDict(input_db):
 				value = line.split("|")
 				value = value[4].strip()
 				value = value.split()
-				value = value[0] + " " + value[1]
+				genus = value[0]
+				if genus[0] == "["
+					genus = genus[1:-1]
+				value = genus + " " + value[1]
 				if key not in accnum_with_species:
 					accnum_with_species[key] = value
 	return accnum_with_species
